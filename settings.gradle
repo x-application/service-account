@@ -9,6 +9,8 @@ rootProject.name = 'service-account'
 
 include 'common-base'
 include 'common-account'
+include 'utils-extension'
 
 project(':common-base').projectDir = new File(settingsDir, './modules/common/base')
 project(':common-account').projectDir = new File(settingsDir, './modules/common/account')
+project(':utils-extension').projectDir = new File(settingsDir, './modules/utils/extension')

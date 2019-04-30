@@ -1,7 +1,7 @@
 buildscript {
     ext {
         kotlinVersion = '1.3.30'
-        axonVersion = '3.4.2'
+        axonVersion = '4.1.1'
     }
     repositories {
         mavenCentral()
@@ -46,8 +46,14 @@ dependencies {
     implementation "com.fasterxml.jackson.core:jackson-databind:2.9.6"
     implementation "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.6"
 
+    /**
+     * Reflections
+     */
+    implementation "org.reflections:reflections:0.9.11"
+
     implementation project(':common-base')
     implementation project(':common-account')
+    implementation project(':utils-extension')
 
     testCompile "junit:junit:4.12"
     testCompile "org.axonframework:axon-test:${axonVersion}"

@@ -4,3 +4,6 @@
 [submodule "modules/common/account"]
 	path = modules/common/account
 	url = ../common-account
+[submodule "modules/utils/extension"]
+	path = modules/utils/extension
+	url = ../utils-extension

@@ -1,9 +1,10 @@
-package x.app.service.account.aggregate
+package x.app.service.account
 
-import org.axonframework.commandhandling.model.AggregateIdentifier
-import org.axonframework.commandhandling.model.AggregateLifecycle
-import org.axonframework.commandhandling.model.AggregateMember
 import org.axonframework.eventhandling.EventHandler
+import org.axonframework.modelling.command.AggregateIdentifier
+import org.axonframework.modelling.command.AggregateLifecycle
+import org.axonframework.modelling.command.AggregateMember
+import org.axonframework.modelling.command.CommandHandlerInterceptor
 import org.axonframework.spring.stereotype.Aggregate
 import x.app.common.account.event.AccountCreatedEvent
 
@@ -43,5 +44,6 @@ class Account {
         this.accountType = event.accountType
         this.password = event.password
     }
+
 
 }

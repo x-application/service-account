@@ -1,10 +1,11 @@
 package x.app.service.account.handler
 
 import org.axonframework.commandhandling.CommandHandler
-import org.axonframework.commandhandling.model.Repository
+import org.axonframework.modelling.command.Repository
+import x.app.common.AbstractResult
 import x.app.common.CommonService
 import x.app.common.account.command.CreateAccountCommand
-import x.app.service.account.aggregate.Account
+import x.app.service.account.Account
 
 /**
  *   @Project: service-account
@@ -18,10 +19,10 @@ class AccountHandler(
 ) {
 
     @CommandHandler
-    fun handle(command: CreateAccountCommand) {
+    fun handle(command: CreateAccountCommand): AbstractResult {
         repository.newInstance {
-            Account(command.accountId, command.accountType, command.password, time = commonService.currentTimeMillis())
-        }
+            Account(accountId = command.accountId, accountType = command.accountType, password = command.password, time = commonService.currentTimeMillis())
+        }?.invoke { it }?.run { return CreateAccountCommand.Result(accountId = this.accountId) }
     }
 
 }
