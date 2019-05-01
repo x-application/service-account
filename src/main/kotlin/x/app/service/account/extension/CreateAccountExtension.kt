@@ -2,10 +2,10 @@ package x.app.service.account.extension
 
 import org.axonframework.modelling.command.AggregateNotFoundException
 import org.axonframework.modelling.command.Repository
-import x.app.common.ICommandExtensionPoint
 import x.app.common.account.command.CreateAccountCommand
 import x.app.service.account.Account
 import x.app.utils.extension.annotation.Extension
+import x.app.utils.extension.point.ICommandExtensionPoint
 
 /**
  *   @Project: service-account
